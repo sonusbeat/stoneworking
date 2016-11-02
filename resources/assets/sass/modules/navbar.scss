@@ -1,0 +1,107 @@
+.navbar-default {
+  background-color: white;
+  border-color: rgba(34, 34, 34, 0.05);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  transition: all 0.35s;
+
+  .navbar-header {
+    .navbar-brand {
+      color: $base_color;
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+      color: #eb3812;
+      cursor: pointer;
+    }
+
+    .navbar-toggle {
+      font-weight: 700;
+      font-size: 12px;
+      color: $dark_background;
+      text-transform: uppercase;
+    }
+  }
+
+
+  .nav > li > a,
+  .nav > li > a:focus {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    color: $dark_background;
+  }
+
+  .nav > li > a:hover,
+  .nav > li > a:focus:hover {
+    color: $base_color;
+  }
+
+  .nav > li.active > a,
+  .nav > li.active > a:focus {
+    color: $base_color !important;
+    background-color: transparent;
+  }
+
+  .nav > li.active > a:hover,
+  .nav > li.active > a:focus:hover {
+    background-color: transparent;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-default {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+
+    .navbar-header {
+      .navbar-brand {
+        color: rgba(255, 255, 255, 0.7);
+
+        &:hover,
+        &:focus {
+          color: white;
+        }
+      }
+    }
+
+    
+    .nav > li > a,
+    .nav > li > a:focus {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .nav > li > a:hover,
+    .nav > li > a:focus:hover {
+      color: white;
+    }
+    
+    &.affix {
+      background-color: white;
+      border-color: rgba(34, 34, 34, 0.05);
+    }
+    
+    &.affix .navbar-header .navbar-brand {
+      color: $base_color;
+      font-size: 14px;
+    }
+
+    &.affix .navbar-header .navbar-brand:hover,
+    &.affix .navbar-header .navbar-brand:focus {
+      color: #eb3812;
+    }
+    
+    &.affix .nav > li > a,
+    &.affix .nav > li > a:focus {
+      color: $dark_background;
+    }
+    
+    &.affix .nav > li > a:hover,
+    &.affix .nav > li > a:focus:hover {
+      color: $base_color;
+    }
+  }
+}

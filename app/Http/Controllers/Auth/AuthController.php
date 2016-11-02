@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Stoneworking\Http\Controllers\Auth;
 
-use App\User;
+use Stoneworking\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Stoneworking\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

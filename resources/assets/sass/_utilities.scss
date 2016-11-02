@@ -1,0 +1,46 @@
+.bg-primary {
+  background-color: $base_color;
+}
+
+.bg-dark {
+  background-color: $dark_background;
+  color: white;
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.call-to-action h2 {
+  margin: 0 auto 20px;
+}
+
+.text-primary {
+  color: $base_color;
+}
+
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+[class*="icon-"] {
+  font-size: 50px;
+  color: darken($navy, 30%);
+}
+
+::-moz-selection {
+  color: white;
+  text-shadow: none;
+  background: $dark_background;
+}
+
+::selection {
+  color: white;
+  text-shadow: none;
+  background: $dark_background;
+}
