@@ -10,6 +10,21 @@
     ls -l --group-directories-first
 @endtask
 
+@task('migrate', ['on' => 'web'])
+	cd stoneworking
+    php artisan migrate
+@endtask
+
+@task('seed', ['on' => 'web'])
+	cd stoneworking
+    php artisan db:seed
+@endtask
+
+@task('seed-table', ['on' => 'web'])
+	cd stoneworking
+    php artisan db:seed --class={{ $table or null }}
+@endtask
+
 @task('deploy', ['on' => 'web'])
 	cd stoneworking
     git pull origin {{ $branch }}
