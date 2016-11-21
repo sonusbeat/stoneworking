@@ -318,4 +318,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl {
   padding: 15px 30px; }
 
+.bxslider li {
+  list-style-type: none; }
+
 /*# sourceMappingURL=main.min.css.map */

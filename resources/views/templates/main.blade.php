@@ -26,11 +26,11 @@
         <!-- jQuery -->
         <script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- BX Slider JS -->
+        <script src="/js/jquery.bxslider.min.js"></script>
 
-        <!-- JavaScript Plugins -->
-        <script src="js/libraries.min.js"></script>
+        <!-- BX Slider CSS -->
+        <link rel="stylesheet" href="/css/jquery.bxslider.css">
 
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -43,6 +43,12 @@
         @include('public/partials/navigation')
 
         @yield('content')
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!-- JavaScript Plugins -->
+        <script src="js/libraries.min.js"></script>
 
         <!-- Custom Scripts -->
         @yield('custom-scripts')
