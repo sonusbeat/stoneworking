@@ -1,5 +1,5 @@
 .navbar-default {
-  background-color: white;
+  background-color: hsl(0,0%,10%);
   border-color: rgba(34, 34, 34, 0.05);
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   transition: all 0.35s;
@@ -54,7 +54,6 @@
 
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: transparent;
     border-color: rgba(255, 255, 255, 0.3);
 
     .navbar-header {
