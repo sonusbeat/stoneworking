@@ -1,19 +1,19 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "stone-working";
-  src:url("../fonts/stone-working.eot");
-  src:url("../fonts/stone-working.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/stone-working.woff") format("woff"),
-    url("../fonts/stone-working.ttf") format("truetype"),
-    url("../fonts/stone-working.svg#stone-working") format("svg");
+  font-family: "stoneworking";
+  src:url("../fonts/stoneworking.eot");
+  src:url("../fonts/stoneworking.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/stoneworking.woff") format("woff"),
+    url("../fonts/stoneworking.ttf") format("truetype"),
+    url("../fonts/stoneworking.svg#stoneworking") format("svg");
   font-weight: normal;
   font-style: normal;
 
 }
 
 [data-icon]:before {
-  font-family: "stone-working" !important;
+  font-family: "stoneworking" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -27,7 +27,7 @@
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "stone-working" !important;
+  font-family: "stoneworking" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -65,6 +65,9 @@
 .icon-facebook:before {
   content: "\6b";
 }
-.icon-youtube:before {
+.icon-youtubesearch:before {
   content: "\6a";
+}
+.icon-magnify:before {
+  content: "\64";
 }

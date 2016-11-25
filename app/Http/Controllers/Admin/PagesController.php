@@ -2,9 +2,9 @@
 
 namespace Stoneworking\Http\Controllers\Admin;
 
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
-// use Stoneworking\Http\Requests;
+use Stoneworking\Http\Requests;
 use Stoneworking\Http\Controllers\Controller;
 
 class PagesController extends Controller

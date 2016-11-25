@@ -1,0 +1,63 @@
+.heading {
+	color: darken($navy, 30%);
+	font-family: 'Open Sans';
+	font-weight: bold;
+	text-align: center;
+}
+
+.instructions {
+	font-family: 'Open Sans', Arial, Verdana;
+	text-align: center;
+	margin: 20px 0;
+	color: hsl(210, 100%, 40%);
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+
+.blueprints {
+	margin: 20px 0 40px;
+	width: 100%;
+	img, a, input[type=radio] {
+		display: block;
+	}
+
+	.fancybox:after {
+		position: absolute;
+		content: "\64";
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		height: 40px;
+		width: 40px;
+
+		font-family: stoneworking!important;
+	    font-style: normal!important;
+	    font-weight: 400!important;
+	    font-variant: normal!important;
+	    text-transform: none!important;
+	    speak: none;
+	    line-height: 1;
+	    font-size: 38px;
+	    color: hsl(200, 60, 50);
+	}
+
+	img {
+		height: auto;
+		max-width: 200px;
+		width: 100%;
+		border: solid #ddd 1px;
+		margin: 10px 0 20px;
+		position: relative;		
+	}
+
+	input[type=radio] {
+		margin: 0 auto;
+		width: 100%;
+		height: 25px;
+		&:focus {
+			outline: none;
+		}
+	}
+}

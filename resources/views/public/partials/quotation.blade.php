@@ -2,7 +2,7 @@
     <div class="container text-center">
         <div class="call-to-action">
             <h2>Cotiza en Línea</h2>
-            <a href="#" class="btn btn-default btn-xl sr-button">Cotizar</a>
+            <a href="#quote" class="page-scroll btn btn-default btn-xl sr-button">Cotizar</a>
         </div>
     </div>
 </aside>

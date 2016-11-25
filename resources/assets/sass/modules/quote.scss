@@ -1,0 +1,15 @@
+#quote {
+	margin-top: 80px;
+	h2 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+.form.quote {
+	label {
+		font-family: 'Open Sans', Arial, sans-serif;
+		color: darken($navy, 30%);
+		margin-bottom: 10px;
+	}
+}

@@ -1,4 +1,4 @@
-<section id="contact">
+<div id="contact" class="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -13,7 +13,7 @@
             <div class="col-lg-4 text-center">
                 <i class="icon-mail"></i>
                 <p><a href="mailto:contacto@stoneworking.com.mx">contacto@stoneworking.com.mx</a></p>
-            </div>
-        </div>
-    </div>
-</section>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div><!-- /.contact -->

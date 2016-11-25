@@ -3,7 +3,7 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
 	/* ################## Public ################## */
-    mix.sass('main.scss', 'public/css/main.min.css');
+   mix.sass('main.scss', 'public/css/main.min.css');
 
     // mix.styles([
     // 	'fontastic.css',

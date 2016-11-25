@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Cubiertas de Marmol, Granito y Onix para Cocinas y Negocios - Stone Working</title>
+        <title>@yield('page-title')</title>
 
         <meta name="description" content="Servicio de instalación de Mármol, Granito, Onix, Cuarzo entre otros materiales hermosos para crear espectaculares cubiertas para el hogar o negocios comerciales">
         <meta name="robots" content="index, nofollow">
@@ -32,6 +32,13 @@
         <!-- BX Slider CSS -->
         <link rel="stylesheet" href="/css/jquery.bxslider.css">
 
+        <!-- Add mousewheel plugin (this is optional) -->
+        <script type="text/javascript" src="/js/jquery.mousewheel.min.js"></script>
+
+        <!-- Add fancyBox main JS and CSS files -->
+        <script type="text/javascript" src="/js/jquery.fancybox.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css">
+
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -48,10 +55,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
         <!-- JavaScript Plugins -->
-        <script src="js/libraries.min.js"></script>
-
-        <!-- Custom Scripts -->
-        @yield('custom-scripts')
+        <script src="js/libraries.min.js"></script>        
 
         <!-- Go Up Plugin -->
         <script>
@@ -102,5 +106,21 @@
                 });
             });
         </script>
+
+        <!-- Fancybox -->
+        <script>
+            $(document).ready(function() {
+                $(".fancybox").fancybox({
+                     helpers: {
+                        overlay: {
+                            locked: false
+                        }
+                    }
+                });
+            });
+        </script>
+
+        <!-- Custom Scripts -->
+        @yield('custom-scripts')
     </body>
 </html>
