@@ -65,8 +65,8 @@ class QuotesController extends Controller
             $message->from($data['email'], $data['name']);
             $message->replyTo($data['email'], $data['name']);
 
-            $message->to('stoneworkingmexico@gmail.com', 'Guillermo Luna');
-            $message->cc('stoneworkinggdl@gmail.com', 'Guillermo Luna');
+            $message->to('stoneworkingmexico@gmail.com', 'Guillermo Humberto Luna Lopez');
+            $message->cc('stoneworkinggdl@gmail.com', 'Guillermo Humberti Luna Lopez');
             $message->subject('Solicitud de Cotización de Stoneworking');
 
             $message->attach($data['image'], [
