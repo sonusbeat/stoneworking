@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-4 text-center">
                 <i class="icon-mail"></i>
-                <p><a href="mailto:contacto@stoneworking.com.mx">contacto@stoneworking.com.mx</a></p>
+                <p><a href="mailto:stoneworkingmexico@gmail.com">stoneworkingmexico@gmail.com</a></p>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container -->
