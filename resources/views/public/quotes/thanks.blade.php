@@ -18,24 +18,29 @@
 
         <style>
         	.thanks {
-				font-family: 'Open Sans', Arial, sans-serif;
-				font-size: 18px;
-				margin-top: 80px;
-				padding: 20px 20px 30px;
-				text-align: center;
+    				font-family: 'Open Sans', Arial, sans-serif;
+    				font-size: 18px;
+    				margin-top: 80px;
+    				padding: 20px 20px 30px;
+    				text-align: center;
 
-			}
+    			}
 
-			.thanks h1 {
-				margin-top: 0;
-				margin-bottom: 10px;
-			}
+    			.thanks h1 {
+    				margin-top: 0;
+    				margin-bottom: 10px;
+    			}
         </style>
 
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->     
+        <![endif]-->
+
+        @if(env('GOOGLE_ANALYTICS'))
+            <!-- Google Analytics -->
+            @include('public/partials/google-analytics')
+        @endif 
     </head>
 
     <body>
