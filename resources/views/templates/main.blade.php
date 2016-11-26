@@ -102,8 +102,11 @@
                 // BX Slider
                 $(document).ready(function(){
                   $('.bxslider').bxSlider({
-                    mode: 'horizontal',
+                    auto: true,
                     speed: 400,
+                    autoStart: true,
+                    pause: 7000,
+                    mode: 'horizontal',
                     infiniteLoop: true,
                     useCSS: false,
                     easing: 'easeOutBack',
