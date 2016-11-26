@@ -100,13 +100,58 @@
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-	left: 10px;
-	background: url(../images/controls.png) no-repeat 0 -32px;
+	left: 10px;	
 }
 
 .bx-wrapper .bx-next {
-	right: 20px;
-	background: url(../images/controls.png) no-repeat -43px -32px;
+	right: 40px;
+}
+
+.bx-wrapper .bx-prev:after,
+.bx-wrapper .bx-next:after {
+	position: absolute;	
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+
+	/* Size */
+	height: 50px;
+	width: 50px;
+
+	background-color: #000;
+	background-color: hsla(0,0%,0%,.65);
+	border-radius: 25px;
+	font-family: stoneworking!important;
+	margin: auto;
+    color: #fff;
+    color: rgba(255,255,255,.65);
+    font-size: 30px;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 400 !important;
+    line-height: 1.8;
+    padding-left: 6px;
+    speak: none;
+    text-transform: none !important;
+    transition: all 0.25s ease;
+}
+
+.bx-wrapper .bx-prev:hover:after,
+.bx-wrapper .bx-next:hover:after {
+	transition: all 0.5s ease;
+	background-color: #000;
+	background-color: #111;
+	color: #fff;
+}
+
+.bx-wrapper .bx-prev:after {
+	content: "\6d";
+}
+
+.bx-wrapper .bx-next:after {
+	content: "\6e";
+	padding-left: 12px;
 }
 
 .bx-wrapper .bx-controls-direction a {
@@ -116,7 +161,6 @@
 	outline: 0;
 	width: 32px;
 	height: 32px;
-	text-indent: -9999px;
 	z-index: 9999;
 }
 

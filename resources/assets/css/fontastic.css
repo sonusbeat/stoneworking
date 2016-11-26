@@ -71,3 +71,15 @@
 .icon-magnify:before {
   content: "\64";
 }
+.icon-down-arrow:before {
+  content: "\6c";
+}
+.icon-left-arrow:before {
+  content: "\6d";
+}
+.icon-right-arrow:before {
+  content: "\6e";
+}
+.icon-up-arrow:before {
+  content: "\6f";
+}
