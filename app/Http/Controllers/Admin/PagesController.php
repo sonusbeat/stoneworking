@@ -2,9 +2,8 @@
 
 namespace Stoneworking\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
-use Stoneworking\Http\Requests;
+// use Illuminate\Http\Request;
+// use Stoneworking\Http\Requests;
 use Stoneworking\Http\Controllers\Controller;
 
 class PagesController extends Controller
@@ -16,6 +15,6 @@ class PagesController extends Controller
      */
     public function home()
     {
-      return view('public/home');
+      	return view('public/home', ['requestUri' => '']);
     }
 }

@@ -5,7 +5,10 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Stone Working</a>
+
+             @if(isset($requestUri) && $requestUri === '')
+                <a class="navbar-brand page-scroll" href="#page-top">Stone Working</a>
+            @endif
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -14,18 +17,20 @@
                 <li>
                     <a class="page-scroll" href="/">Home</a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#about">Nosotros</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#services">Servicios</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#portfolio">Trabajos Realizados</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contacto</a>
-                </li>
+                @if(isset($requestUri) && $requestUri === '')
+                    <li>
+                        <a class="page-scroll" href="#about">Nosotros</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Servicios</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Trabajos Realizados</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contacto</a>
+                    </li>
+                @endif
                 <li>
                     <a class="page-scroll" href="{{ route('quote') }}">Cotización</a>
                 </li>

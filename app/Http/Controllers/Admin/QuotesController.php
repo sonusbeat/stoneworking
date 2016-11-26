@@ -2,7 +2,7 @@
 
 namespace Stoneworking\Http\Controllers\Admin;
 
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use Stoneworking\Http\Controllers\Controller;
 use Stoneworking\Http\Requests;
 use Stoneworking\Http\Requests\QuoteRequest;
@@ -26,7 +26,7 @@ class QuotesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function processQuote(QuoteRequest $request)
-    {
+    {        
         $data = [
             'name'      => $request->name,
             'mobile'    => $request->mobile,

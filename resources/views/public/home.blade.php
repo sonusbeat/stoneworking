@@ -6,8 +6,8 @@
     @include('public/partials/about')
     @include('public/partials/services')
     @include('public/partials/portfolio')
-    @include('public/partials/quotation')
     @include('public/partials/contact')
+    @include('public/partials/quotation')
 @endsection
 
 @section('custom-scripts')
