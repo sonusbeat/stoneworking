@@ -1,6 +1,6 @@
 <?php
 
-namespace Stoneworking;
+namespace Stoneworking\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'username', 'email', 'image', 'type', 'active', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -36,4 +36,19 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /* -------------------- MUTATORS -------------------- */
+    /**
+     * Set the username.
+     *
+     * @param  string $value
+     * @return string
+     */
+    public function setUsernameAttribute($value)
+    {
+        $lowercase = strtolower($value);
+        $removespaces = str_replace(' ', '', $lowercase);
+        $clean = str_replace(['.','-'], '', $removespaces);
+        $this->attributes['username'] = $clean;
+    }
 }

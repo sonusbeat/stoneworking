@@ -25,7 +25,7 @@
                         <a class="page-scroll" href="#services">Servicios</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Trabajos Realizados</a>
+                        <a class="page-scroll" href="{{ route('public.categories') }}">Trabajos Realizados</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contacto</a>

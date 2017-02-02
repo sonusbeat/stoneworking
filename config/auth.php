@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => Stoneworking\User::class,
+    'model' => Stoneworking\Models\User::class,
 
     /*
     |--------------------------------------------------------------------------

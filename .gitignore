@@ -3,6 +3,9 @@
 _ide_helper.php
 /vendor
 /node_modules
+/public/img/
+/storage/debugbar/
+/database/seeds/UserTableSeeder.php
 Homestead.yaml
 Homestead.json
 .env

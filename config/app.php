@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Mexico_City',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -138,6 +138,13 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Third Party Service Providers
+         */
+        Intervention\Image\ImageServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        /*
          * Application Service Providers...
          */
         Stoneworking\Providers\AppServiceProvider::class,
@@ -193,6 +200,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Third party facades
+         */
+        'Image' => Intervention\Image\Facades\Image::class,
+        // 'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

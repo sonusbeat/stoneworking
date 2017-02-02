@@ -1,0 +1,1 @@
+Visite el siguiente enlace para recuperar su contraseña: {{ url('password/reset/'.$token) }}

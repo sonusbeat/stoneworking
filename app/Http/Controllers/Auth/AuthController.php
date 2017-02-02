@@ -10,6 +10,10 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+    protected $loginPath = '/admin/login';
+    protected $redirectTo = '/admin';
+    protected $redirectAfterLogout = '/admin/login';
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -61,5 +65,19 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogout()
+    {
+        \Auth::logout();
+
+        flash()->success('¡ Vuelve Pronto !', 'Has salido correctamente');
+
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 }

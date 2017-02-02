@@ -14,8 +14,16 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        // DB::statement('PRAGMA foreign_keys = OFF;');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+            $this->call(SectionTableSeeder::class);
+            $this->call(CategoryTableSeeder::class);
+            $this->call(WorkTableSeeder::class);
+        // DB::statement('PRAGMA foreign_keys = ON;');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
         Model::reguard();
+        $this->call('CategoriesTableSeeder');
+        $this->call('WorksTableSeeder');
     }
 }
