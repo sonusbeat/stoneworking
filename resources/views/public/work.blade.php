@@ -15,22 +15,21 @@
 			</div><!-- /.col -->
 			<div class="work__information">
 				<h2>{{ $work->name }}</h2>
-				<p><small>Material:</small>&nbsp;XXXX</p>
+				<p><small>Material:</small>&nbsp;----</p>
 				<div class="description">
 					{{ $work->description }}
 				</div>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
 
-
+		{{--
 		<h3>Comentarios</h3>
 
 		<p>Modulo de Disqus va aqui</p>
+		--}}
 
-		<div class="text-left">
-			<a class="btn btn-primary"
-			   href="{{ route('public.category.works', $work->category_permalink) }}"
-			>
+		<div class="text-left" style="margin-top: 20px;">
+			<a class="btn btn-primary" href="{{ route('public.category.works', $work->category_permalink) }}">
 				<span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Volver
 			</a>
 		</div>

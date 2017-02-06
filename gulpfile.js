@@ -52,28 +52,28 @@ elixir(function(mix) {
     // ], 'public/js//single-work-libraries.min.js');
 
     /* ################## Admin ################## */
-    // mix.sass('admin.scss', 'public/css/admin.min.css');
-    //
-    // mix.styles([
-    //     'bootstrap.min.css',
-    //     'jquery.fancybox.css',
-    //     'jquery.fancybox-buttons.css',
-    //     'jquery.fancybox-thumbs.css',
-    // 	'fontastic.css',
-    // 	'jquery.fancybox.css',
-    // 	'sweetalert.css',
-    // ], 'public/css/admin-libraries.min.css');
+    mix.sass('admin.scss', 'public/css/admin.min.css');
 
-    // mix.scripts([
-    //     'jquery.min.js',
-    //     'bootstrap.min.js',
-    //     'jquery.goup.js',
-    //     'jquery.fancybox.js',
-    //     'sweetalert.min.js',
-    // ], 'public/js/admin-libraries.min.js');
+    mix.styles([
+        'bootstrap.min.css',
+        'jquery.fancybox.css',
+        'jquery.fancybox-buttons.css',
+        'jquery.fancybox-thumbs.css',
+    	'fontastic.css',
+    	'jquery.fancybox.css',
+    	'sweetalert.css',
+    ], 'public/css/admin-libraries.min.css');
 
-  mix.browserSync({
-      proxy: 'stoneworking.dev',
-      open: true
-  });
+    mix.scripts([
+        'jquery.min.js',
+        'bootstrap.min.js',
+        'jquery.goup.js',
+        'jquery.fancybox.js',
+        'sweetalert.min.js',
+    ], 'public/js/admin-libraries.min.js');
+
+  // mix.browserSync({
+  //     proxy: 'stoneworking.dev',
+  //     open: true
+  // });
 });
