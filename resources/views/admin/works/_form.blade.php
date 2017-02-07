@@ -2,7 +2,7 @@
     <div class="col-md-6">
     @if(isset($changeCategory) && $changeCategory)
         <!-- Categoría -->
-            <div class="form-group {{ !$errors->has('category_id') ?: 'has-error' }}">
+        <div class="form-group {{ !$errors->has('category_id') ?: 'has-error' }}">
                 <label for="category_id">Categoría</label>
                 <select name="category_id" id="category_id" class="form-control">
                     <option selected disabled>Seleccione Categoría</option>
@@ -21,7 +21,7 @@
             </div>
     @endif
 
-    <!-- Nombre -->
+        <!-- Nombre -->
         <div class="form-group {{ !$errors->has('name') ?: 'has-error' }}">
             <label for="name">Nombre</label>
             <input class="form-control" id="name" type="text" name="name" value="{{ $work->name or old('name') }}">
@@ -36,15 +36,17 @@
         <!-- Enlace Permanente -->
         <div class="form-group {{ !$errors->has('permalink') ?: 'has-error' }}">
             <label for="permalink">Enlace Permanente</label>
-            <input class="form-control" id="permalink" type="text" name="permalink" value="{{ $work->permalink or old('permalink') }}">
+            <input class="form-control" id="permalink" type="text" name="permalink"
+                   value="{{ $work->permalink or old('permalink') }}">
 
             @if ($errors->has('permalink'))
                 <span class="help-block">
-                    <b>{{ $errors->first('permalink') }}</b>
-                </span>
+                            <b>{{ $errors->first('permalink') }}</b>
+                        </span>
             @endif
         </div>
     </div><!-- /.col -->
+
     <div class="col-md-6">
         <!-- Título -->
         <div class="form-group {{ !$errors->has('meta_title') ?: 'has-error' }}">
@@ -91,62 +93,78 @@
                         @if ((isset($work) AND $work->meta_robots == 'noindex, follow') OR (old('meta_robots') == 'noindex, follow'))
                         selected
                         @endif
-                >No Indexar y Seguir</option>
+                >No Indexar y Seguir
+                </option>
 
                 <option value="index, nofollow"
                         @if ((isset($work) AND $work->meta_robots == 'index, nofollow') OR (old('index, nofollow') == 'index, nofollow'))
                         selected
                         @endif
-                >Indexar y No Seguir</option>
+                >Indexar y No Seguir
+                </option>
                 <option value="noindex, nofollow"
                         @if ((isset($work) AND $work->meta_robots == 'noindex, nofollow') OR (old('noindex, nofollow') == 'noindex, nofollow'))
                         selected
                         @endif
-                >No Indexar y No Seguir</option>
+                >No Indexar y No Seguir
+                </option>
             </select>
 
             @if ($errors->has('meta_robots'))
                 <span class="help-block">
-                    <b>{{ $errors->first('meta_robots') }}</b>
-                </span>
+                            <b>{{ $errors->first('meta_robots') }}</b>
+                        </span>
             @endif
         </div>
     </div><!-- /.col -->
 </div><!-- /.row -->
 
 <div class="row">
+
     <div class="col-md-4">
         @if(isset($work) && $work->image !== 'no-image.jpg')
             <img class="img-responsive img-thumbnail" src="/img/portfolio/{{ $work->image }}-thumbnail.jpg" alt="{{ $work->image_alt }}">
+        @else
+            <img class="img-responsive img-thumbnail" src="/images/no-image.jpg" alt="No Image">
         @endif
     </div><!-- /.col -->
+
     <div class="col-md-8">
         <h3>Imagen del trabajo realizado</h3>
 
         <p class="instructions">Por favor seleccione una imagen en formato JPG</p>
 
-        <p class="image-name">
-            <b>Nombre de la imagen:</b>&nbsp;{{ $work->image }}.jpg
-        </p>
+        @if(isset($work))
+            <p class="image-name">
+                <b>Nombre de la imagen:</b>&nbsp;{{ $work->image }}.jpg
+            </p>
+        @else
+            <p class="image-name">
+                <b>Nombre de imagen:</b>&nbsp;
+                <span class="text-warning">Aún no se ha subido una imagen</span>
+            </p>
+        @endif
 
-        <input id="image" class="img-thumbnail {{ !$errors->has('image') ? 'input-image' : 'input-image-error' }}" type="file" name="image" value="{{ old('image') }}" class="form-control image-input">
+        <input id="image" class="img-thumbnail {{ !$errors->has('image') ? 'input-image' : 'input-image-error' }}"
+               type="file" name="image" value="{{ old('image') }}" class="form-control image-input">
         @if ($errors->has('image'))
             <span class="help-block error">
                 <b>{{ $errors->first('image') }}</b>
             </span>
-    @endif
+        @endif
         <div class="row">
             <div class="col-md-6">
                 <!-- Texto Alternativo de Imagen -->
                 <div class="form-group {{ !$errors->has('image_alt') ?: 'has-error' }}">
-            <label for="image_alt">Texto Alternativo de la Imagen</label>
-            <input class="form-control" id="image_alt" type="text" name="image_alt" value="{{ $work->image_alt or old('image_alt') }}">
-            @if ($errors->has('image_alt'))
-                <span class="help-block">
+                    <label for="image_alt">Texto Alternativo de la Imagen</label>
+                    <input class="form-control" id="image_alt" type="text" name="image_alt"
+                           value="{{ $work->image_alt or old('image_alt') }}">
+                    @if ($errors->has('image_alt'))
+                        <span class="help-block">
                 <b>{{ $errors->first('image_alt') }}</b>
             </span>
-            @endif
-        </div>
+                    @endif
+                </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div>
