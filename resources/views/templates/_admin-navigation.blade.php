@@ -16,11 +16,23 @@
             <ul class="nav navbar-nav navbar-right">
             @if(Auth::user())
                 <li>
-                    <a href="/admin">Dashboard</a>
+                    <a href="/" target="_blank">
+                        <span class="glyphicon glyphicon-share-alt"></span>&nbsp;
+                        Ver Sitio
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin">
+                        <span class="glyphicon glyphicon-dashboard"></span>&nbsp;
+                        Tablero
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/admin/logout">Salir</a>
+                    <a href="/admin/logout">
+                        <span class="glyphicon glyphicon-log-out"></span>&nbsp;
+                        Salir
+                    </a>
                 </li>
             @endif
             </ul>
