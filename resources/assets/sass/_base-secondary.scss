@@ -21,11 +21,13 @@ hr {
 a {
   transition: all 0.35s;
   color: $base_color;
+  font-weight: bold;
 }
 
 a:hover,
 a:focus {
-  color: #eb3812;
+  color: #337ab7;
+  text-decoration: none;
 }
 
 h1,

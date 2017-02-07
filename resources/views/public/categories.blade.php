@@ -18,7 +18,7 @@ Galería de imagenes de trabajos realizados con cubiertas de Marmol, Granito, Cu
 						@foreach($row as $work)
 							<div class="col-md-3">
 								<a href="/img/portfolio/{{ $work->image }}-medium.jpg"
-								   class="fancybox-button magnify"
+								   class="fancybox-button magnify-search"
 								   rel="fancybox-button"
 								   title="{{ $work->name }}">
 									<center>

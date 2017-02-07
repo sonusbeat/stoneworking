@@ -1,0 +1,34 @@
+$magnifyColor: rgba(#fff, .3);
+$magnifyHoverColor: hsla(0, 0, 100, .75);
+
+.eye-link {
+  position: relative;
+  display: inline-block;
+  font-family: Glyphicons Halflings;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+
+  &:hover:after {
+    color: $magnifyHoverColor;
+    transition: all 0.3s;
+    font-size: 90px;
+    height: 90px;
+    width: 90px;
+  }
+
+  &:after {
+    transition: all 0.40s;
+    content: "\e105";
+    position: absolute;
+    font-size: 70px;
+    height: 70px;
+    width: 70px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    color: $magnifyColor;
+  }
+}

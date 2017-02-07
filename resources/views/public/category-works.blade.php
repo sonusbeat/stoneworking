@@ -16,7 +16,10 @@ Galería de imagenes de trabajos realizados con cubiertas de Marmol, Granito, Cu
 					<div class="row">
 					@foreach($row as $work)
 						<div class="col-md-3">
-							<a href="{{ route('public.work', $work->permalink) }}" title="{{ $work->name }}">
+							<a href="{{ route('public.work', $work->permalink) }}"
+							   class="eye-link"
+							   title="{{ $work->name }}"
+							>
 								<center>
 									<img src="/img/portfolio/{{ $work->image }}-thumbnail.jpg"
 										 class="img-responsive img-thumbnail"
@@ -25,7 +28,9 @@ Galería de imagenes de trabajos realizados con cubiertas de Marmol, Granito, Cu
 								</center>
 							</a>
 							<h4 class="text-center">
-								{!! '<a href="'.$work->permalink.'">'.$work->name.'</a>' !!}
+								<a href="{{ route('public.work', $work->permalink) }}">
+									{{ $work->name }}
+								</a>
 							</h4>
 						</div><!-- /.col -->
 					@endforeach

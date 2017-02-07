@@ -1,7 +1,7 @@
-$magnifyColor: hsla(0, 0, 50, .7);
-$magnifyHoverColor: hsl(210,100,60);
+$magnifyColor: hsla(0, 100, 100, .5);
+$magnifyHoverColor: rgba(#fff, 1);
 
-.eye {
+.magnify-search {
   position: relative;
   display: inline-block;
   font-family: Glyphicons Halflings;
@@ -11,6 +11,8 @@ $magnifyHoverColor: hsl(210,100,60);
 
   &:hover:after {
     color: $magnifyHoverColor;
+    transition: all .4s;
+    font-size: 50px;
   }
 
   &:after {
@@ -20,5 +22,6 @@ $magnifyHoverColor: hsl(210,100,60);
     right: 20px;
     bottom: 20px;
     color: $magnifyColor;
+    transition: all .3s;
   }
 }
