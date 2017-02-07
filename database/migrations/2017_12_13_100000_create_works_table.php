@@ -25,7 +25,7 @@ class CreateWorksTable extends Migration
             $table->string('permalink', 200)->unique();
             $table->string('image')->default('no-image.jpg');
             $table->string('image_alt')->nullable();
-            $table->string('description', 165)->nullable();
+            $table->string('description')->nullable();
             $table->boolean('active')->default(0);
 
             /* -------------------- START SEO -------------------- */

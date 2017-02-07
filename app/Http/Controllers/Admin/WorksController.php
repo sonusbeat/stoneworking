@@ -86,6 +86,7 @@ class WorksController extends Controller
              'category_id' => $categoryId,
              'name'        => $request->name,
              'permalink'   => self::urlFriendly($request->permalink),
+             'description' => $request->description,
              'image_alt'   => $request->image_alt,
              'meta_title'       => $request->meta_title,
              'meta_description' => $request->meta_description,
@@ -165,6 +166,7 @@ class WorksController extends Controller
         $work->category_id  = $request->category_id;
         $work->name         = $request->name;
         $work->permalink    = self::urlFriendly($request->permalink,false);
+        $work->description  = $request->description;
         $work->image_alt    = $request->image_alt;
 
         $work->meta_title       = $request->meta_title;

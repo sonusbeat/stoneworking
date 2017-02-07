@@ -175,7 +175,7 @@ class WorksTableSeeder extends Seeder
                 'meta_description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit debitis placeat saepe perspiciatis expedita, maiores rerum, culpa mollitia sunt id iure porro repellat',
                 'meta_robots' => 'index, follow',
                 'created_at' => '2017-01-31 18:33:40',
-                'updated_at' => '2017-01-31 19:54:50',
+                'updated_at' => '2017-02-07 14:02:51',
             ),
             10 => 
             array (
@@ -258,8 +258,7 @@ class WorksTableSeeder extends Seeder
                 'updated_at' => '2017-01-31 21:26:07',
             ),
         ));
-
-        $this->command->info('Works table seeded successfully :)');
         
+        $this->command->info('Works Table Seeded :)');
     }
 }

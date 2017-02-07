@@ -45,6 +45,18 @@
                         </span>
             @endif
         </div>
+
+        <!-- Descripción -->
+        <div class="form-group {{ !$errors->has('description') ?: 'has-error' }}">
+            <label for="description">Descripción</label>
+            <textarea class="form-control" id="description" name="description" rows="3">{{ $work->description or old('description') }}</textarea>
+
+            @if ($errors->has('permalink'))
+                <span class="help-block">
+                            <b>{{ $errors->first('permalink') }}</b>
+                        </span>
+            @endif
+        </div>
     </div><!-- /.col -->
 
     <div class="col-md-6">

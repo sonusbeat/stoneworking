@@ -28,8 +28,12 @@ class WorksRequest extends Request
         return [
             'category_id' => 'numeric',
             'name'        => 'required|between:4,150',
-            'permalink'   => 'required|between:4,200|unique:works,permalink,'
-                              .$route->getParameter('works'),
+            'permalink'   => [
+                'required',
+                'between:4,200',
+                'unique:works,permalink,'.$route->getParameter('works')
+            ],
+            'description' => 'required|between:4,255',
             'image'       => 'mimes:jpg,jpeg',
             'image_alt'   => 'between:4,255',
 
