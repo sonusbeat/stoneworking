@@ -87,6 +87,7 @@ class Category extends Model
                         'description',
                         'active'
                     ])
+                    ->where('active', true)
                     ->orderBy('created_at','desc')
                     ->take(16)
                     ->get();
