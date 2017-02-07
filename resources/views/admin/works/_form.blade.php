@@ -115,19 +115,30 @@
 </div><!-- /.row -->
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h3><center>Imagen</center></h3><br>
+    <div class="col-md-4">
         @if(isset($work) && $work->image !== 'no-image.jpg')
-            <center><img class="img-responsive img-thumbnail" src="/img/portfolio/{{ $work->image }}-medium.jpg" alt="{{ $work->image_alt }}"></center><br><br>
+            <img class="img-responsive img-thumbnail" src="/img/portfolio/{{ $work->image }}-thumbnail.jpg" alt="{{ $work->image_alt }}">
         @endif
-        <input id="image" class="img-thumbnail {{ !$errors->has('image') ? 'input-image' : 'input-image-error' }}" type="file" name="image" value="{{ old('image') }}" class="form-control">
+    </div><!-- /.col -->
+    <div class="col-md-8">
+        <h3>Imagen del trabajo realizado</h3>
+
+        <p class="instructions">Por favor seleccione una imagen en formato JPG</p>
+
+        <p class="image-name">
+            <b>Nombre de la imagen:</b>&nbsp;{{ $work->image }}.jpg
+        </p>
+
+        <input id="image" class="img-thumbnail {{ !$errors->has('image') ? 'input-image' : 'input-image-error' }}" type="file" name="image" value="{{ old('image') }}" class="form-control image-input">
         @if ($errors->has('image'))
             <span class="help-block error">
                 <b>{{ $errors->first('image') }}</b>
             </span>
-        @endif
-        <!-- Texto Alternativo de Imagen -->
-        <div class="form-group {{ !$errors->has('image_alt') ?: 'has-error' }}">
+    @endif
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Texto Alternativo de Imagen -->
+                <div class="form-group {{ !$errors->has('image_alt') ?: 'has-error' }}">
             <label for="image_alt">Texto Alternativo de la Imagen</label>
             <input class="form-control" id="image_alt" type="text" name="image_alt" value="{{ $work->image_alt or old('image_alt') }}">
             @if ($errors->has('image_alt'))
@@ -136,5 +147,7 @@
             </span>
             @endif
         </div>
-    </div><!-- /.col -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div>
 </div><!-- /.row -->
