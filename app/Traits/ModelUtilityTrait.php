@@ -24,7 +24,7 @@ trait ModelUtilityTrait
      */
     public static function urlFriendly($permalink, $dashes = true)
     {
-        $remove_dashes = $dashes ? str_replace('-', '', $permalink) : $permalink;
+        $remove_dashes = ($dashes) ? str_replace('-', '', $permalink) : $permalink;
         $space_removed = str_replace(' ', '-', $remove_dashes);
         $lowercase = strtolower($space_removed);
 

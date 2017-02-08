@@ -86,6 +86,7 @@ $(function() {
     // Delete Button Message
     $(document).on("submit", "#delete", function($event) {
         event.preventDefault();
+        var self = $(this);
         swal({
                 title: "¡ Advertencia !",
                 text: "No se podrá recuperar la categoría",
@@ -99,7 +100,7 @@ $(function() {
             },
             function(isConfirm){
                 if (isConfirm) {
-                    $('#delete').submit();
+                    self.submit();
                 } else {
                     swal("Cancelado", "La categoría no se eliminó", "error");
                 }

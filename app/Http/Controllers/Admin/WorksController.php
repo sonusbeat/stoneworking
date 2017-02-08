@@ -288,7 +288,7 @@ class WorksController extends Controller
 
         $work->delete();
 
-        flash()->success('¡ Bien Hecho !', "Se eliminó el trabajo correctamente");
+        flash()->success('¡ Bien Hecho !', 'Se eliminó el trabajo ('.$work->name.') correctamente');
 
         return redirect()->route('admin.categories.works.index', $categoryPermalink);
     }

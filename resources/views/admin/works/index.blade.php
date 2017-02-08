@@ -92,6 +92,7 @@
     $(function() {
         $(document).on("submit", "#delete", function($event) {
             event.preventDefault();
+            var self = $(this);
             swal({
                 title: "¡ Advertencia !",
                 text: "No se podrá recuperar el trabajo",
@@ -105,7 +106,7 @@
             },
             function(isConfirm){
                 if (isConfirm) {
-                    $('#delete').submit();
+                    self.submit();
                 } else {
                     swal("Cancelado", "El trabajo no se eliminó", "error");
                 }

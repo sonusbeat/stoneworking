@@ -35,9 +35,10 @@ function update_status($resource, $id, $resourceName, $type=true)
  */
 function delete_resource($resource=null, $params=null, $resourceName='')
 {
-    $form = '<form action='.route('admin.'.$resource.'.destroy',$params).' method="POST" class="inline" id="delete">';
-    $form .= '<input type="hidden" name="_method" value="DELETE">';
+    $form = '<form action='.route('admin.'.$resource.'.destroy', $params).' ';
+    $form .= 'method="POST" class="inline" id="delete">';
     $form .= '<input type="hidden" name="_token" value="'.csrf_token().'">';
+    $form .= '<input type="hidden" name="_method" value="DELETE">';
     $form .= '<button class="btn btn-danger" type="submit" data-toggle="tooltip"';
     $form .= 'title="Eliminar '.$resourceName.'">';
     $form .= '<span class="glyphicon glyphicon-remove"></span>';

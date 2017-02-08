@@ -20,6 +20,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
     Route::resource('categories', 'CategoriesController');
 
+    /* --------------------------- Tags --------------------------- */
+    Route::resource('tags', 'TagsController', ['except' => 'show']);
+
     /* --------------------------- Works --------------------------- */
     Route::patch('works/status/{id}', [
         'as'   => 'admin.works.status',

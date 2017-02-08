@@ -21,6 +21,10 @@
                 <a href="#"
                    class="list-group-item">Trabajos Realizados
                 </a>
+
+                <a href="{{ route('admin.tags.index') }}"
+                   class="list-group-item">Etiquetas
+                </a>
             </div>
         </div><!-- /.col -->
     </div>
