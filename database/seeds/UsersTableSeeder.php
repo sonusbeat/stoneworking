@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Daniel González Briseño',
                 'username' => 'sonusbeat',
                 'email' => 'sonusbeat@hotmail.com',
-                'password' => bcrypt('secret'),
+                'password' => bcrypt('admin'),
                 'image' => NULL,
                 'type' => 'admin',
                 'active' => 1,
