@@ -5,6 +5,14 @@ namespace Stoneworking\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Stoneworking\Models\Work
+ *
+ * @property-read \Stoneworking\Models\Category $category
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Stoneworking\Models\Tag[] $tags
+ * @method static \Illuminate\Database\Query\Builder|\Stoneworking\Models\Work works()
+ * @mixin \Eloquent
+ */
 class Work extends Model
 {
     /**

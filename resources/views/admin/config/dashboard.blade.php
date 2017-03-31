@@ -15,10 +15,10 @@
                 </a>
 
                 <a href="{{ route('admin.categories.index') }}"
-                   class="list-group-item">Categorías
+                   class="list-group-item">Categorías / Trabajos
                 </a>
 
-                <a href="#"
+                <a href="{{ route('admin.works.latest') }}"
                    class="list-group-item">Trabajos Realizados
                 </a>
 

@@ -28,6 +28,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         'as'   => 'admin.works.status',
         'uses' => 'WorksController@status'
     ]);
+    Route::get('works/latest', [
+        'as'   => 'admin.works.latest',
+        'uses' => 'WorksController@latest'
+    ]);
     Route::resource('categories.works', 'WorksController');
 });
 

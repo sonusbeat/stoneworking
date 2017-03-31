@@ -24,6 +24,8 @@
 					</p>
 				@endif
 
+				<p><small>Material:</small> {{ $work->material }}</p>
+
 				<div class="description">
 					{{ $work->description }}
 				</div>

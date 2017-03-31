@@ -44,6 +44,24 @@ class WorksController extends Controller
     }
 
     /**
+     * Display the latest resource.
+     *
+     * @return Response
+     */
+    public function latest()
+    {
+        $works = Work::orderBy('created_at','desc')
+            ->with(['category' => function($query) {
+                $query->select(['id','name','permalink'])->first();
+            }])
+            ->select(['id','category_id','name','permalink','description','active','created_at'])
+            ->limit(20)
+            ->get();
+
+        return view('admin.works.latest', compact('works'));
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param string $categorypermalink
@@ -270,9 +288,7 @@ class WorksController extends Controller
 
         $work->save();
 
-        flash()->success('¡ Bien Hecho !', "El trabajo ha sido {$status}");
-
-        return redirect()->route('admin.categories.works.index', $categoryPermalink);
+        return redirect()->back();
     }
 
     /**
