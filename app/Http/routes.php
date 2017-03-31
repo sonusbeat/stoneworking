@@ -83,6 +83,6 @@ $router->group(['namespace' => 'Admin'], function($router) {
 
     $router->get('{work}', [
         'as' => 'single-work',
-        'uses' => 'PagesController@singleWork'
+        'uses' => 'PagesController@work'
     ]);
 });

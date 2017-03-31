@@ -12,7 +12,7 @@
 				   title="{{ $work->name }}">
 					<img src="/img/portfolio/{{ $work->image }}-medium.jpg" alt="{{ $work->image_alt }}">
 				</a>
-			</div><!-- /.col -->
+			</div><!-- /.work -->
 			<div class="work__information">
 				<h2>{{ $work->name }}</h2>
 
