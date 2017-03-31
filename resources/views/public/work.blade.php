@@ -16,19 +16,19 @@
 			<div class="work__information">
 				<h2>{{ $work->name }}</h2>
 
-				@if($work->tags()->count())
-					<p><small>Etiquetas:</small>&nbsp;
-					@foreach($work->tags as $tag)
-						{{ $tag->name }}&nbsp;
-					@endforeach
-					</p>
-				@endif
-
-				<p><small>Material:</small> {{ $work->material }}</p>
+				<p><small>Material:</small> <i>{{ $work->material }}</i></p>
 
 				<div class="description">
 					{{ $work->description }}
-				</div>
+				</div><br>
+
+				@if($work->tags()->count())
+					<p><small>Etiquetas:</small>&nbsp;
+						@foreach($work->tags as $tag)
+							<a href="#">{{ $tag->name }}</a>
+						@endforeach
+					</p>
+				@endif
 			</div><!-- /.col -->
 		</div><!-- /.row -->
 
