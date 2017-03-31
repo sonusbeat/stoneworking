@@ -33,6 +33,6 @@ class UsersTableSeeder extends Seeder
             ),
         ));
         
-        
+        $this->command->info('Users Seeded Successfully');
     }
 }

@@ -96,38 +96,56 @@
             @endif
         </div>
 
-        <!-- Robots -->
-        <div class="form-group {{ !$errors->has('meta_robots') ?: 'has-error' }}">
-            <label for="meta_robots">Robots SEO</label>
-            <select name="meta_robots" class="form-control" id="meta_robots">
-                <option value="1" selected>Indexar y Seguir</option>
-                <option value="noindex, follow"
-                        @if ((isset($work) AND $work->meta_robots == 'noindex, follow') OR (old('meta_robots') == 'noindex, follow'))
-                        selected
-                        @endif
-                >No Indexar y Seguir
-                </option>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Material -->
+                <div class="form-group {{ !$errors->has('material') ?: 'has-error' }}">
+                    <label for="material">Material</label>
+                    <input class="form-control" id="material" type="text" name="material" value="{{ $work->material or old('material') }}">
 
-                <option value="index, nofollow"
-                        @if ((isset($work) AND $work->meta_robots == 'index, nofollow') OR (old('index, nofollow') == 'index, nofollow'))
-                        selected
-                        @endif
-                >Indexar y No Seguir
-                </option>
-                <option value="noindex, nofollow"
-                        @if ((isset($work) AND $work->meta_robots == 'noindex, nofollow') OR (old('noindex, nofollow') == 'noindex, nofollow'))
-                        selected
-                        @endif
-                >No Indexar y No Seguir
-                </option>
-            </select>
+                    @if ($errors->has('material'))
+                        <span class="help-block">
+                    <b>{{ $errors->first('material') }}</b>
+                </span>
+                    @endif
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Robots -->
+                <div class="form-group {{ !$errors->has('meta_robots') ?: 'has-error' }}">
+                    <label for="meta_robots">Robots SEO</label>
+                    <select name="meta_robots" class="form-control" id="meta_robots">
+                        <option value="1" selected>Indexar y Seguir</option>
+                        <option value="noindex, follow"
+                                @if ((isset($work) AND $work->meta_robots == 'noindex, follow') OR (old('meta_robots') == 'noindex, follow'))
+                                selected
+                                @endif
+                        >No Indexar y Seguir
+                        </option>
 
-            @if ($errors->has('meta_robots'))
-                <span class="help-block">
+                        <option value="index, nofollow"
+                                @if ((isset($work) AND $work->meta_robots == 'index, nofollow') OR (old('index, nofollow') == 'index, nofollow'))
+                                selected
+                                @endif
+                        >Indexar y No Seguir
+                        </option>
+                        <option value="noindex, nofollow"
+                                @if ((isset($work) AND $work->meta_robots == 'noindex, nofollow') OR (old('noindex, nofollow') == 'noindex, nofollow'))
+                                selected
+                                @endif
+                        >No Indexar y No Seguir
+                        </option>
+                    </select>
+
+                    @if ($errors->has('meta_robots'))
+                        <span class="help-block">
                             <b>{{ $errors->first('meta_robots') }}</b>
                         </span>
-            @endif
+                    @endif
+                </div>
+            </div>
         </div>
+
     </div><!-- /.col -->
 </div><!-- /.row -->
 

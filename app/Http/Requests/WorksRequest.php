@@ -36,6 +36,7 @@ class WorksRequest extends Request
             'description' => 'required|between:4,255',
             'image'       => 'mimes:jpg,jpeg',
             'image_alt'   => 'between:4,255',
+            'material'   => 'required|between:4,25',
 
             'meta_title'       => 'max:70',
             'meta_description' => 'max:165',
@@ -57,7 +58,9 @@ class WorksRequest extends Request
             'permalink.between'    => '¡ El enlace permanente debe ser entre :min a :max  caracteres !',
             'permalink.unique'     => '¡ El enlace permanente ya ha sido utilizado, Elija Otro !',
             'image.mimes'          => '¡ El formato de la imagen debe ser JPG !',
-            'image_alt.between'    => '¡ El texto alternativo de la imagen debe ser entre :min a :max  caracteres !',
+            'image_alt.between'    => '¡ El texto alternativo de la imagen debe ser entre :min a :max caracteres !',
+            'material.required'    => '¡ Escriba el material del trabajo !',
+            'material.between'     => '¡ El material debe ser de :min a :max caracteres !',
             'meta_title.max'       => 'El título seo debe ser menor a :max caracteres',
             'meta_description.max' => 'La descripción seo debe ser menor a :max caracteres',
         ];

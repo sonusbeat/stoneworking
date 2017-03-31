@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Stoneworking\Models\Category;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -12,10 +13,10 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+            Category::truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 
-        \DB::table('categories')->delete();
-        
         \DB::table('categories')->insert(array (
             0 => 
             array (
@@ -55,6 +56,6 @@ class CategoriesTableSeeder extends Seeder
             ),
         ));
         
-        
+        $this->command->info('Categories Table Seeded');
     }
 }

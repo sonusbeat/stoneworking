@@ -14,7 +14,7 @@ class Work extends Model
      */
     protected $fillable = [
         'category_id', 'name', 'permalink',
-        'image', 'image_alt','active', 'description',
+        'image', 'image_alt','material','active', 'description',
         'meta_title', 'meta_description', 'meta_robots'
     ];
 
@@ -63,6 +63,7 @@ class Work extends Model
             'works.permalink',
             'works.image',
             'works.image_alt',
+            'works.material',
             'works.active',
             'works.description',
             'works.meta_title',

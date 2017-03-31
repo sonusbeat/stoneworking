@@ -91,6 +91,7 @@ class WorksController extends Controller
              'permalink'   => self::urlFriendly($request->permalink),
              'description' => $request->description,
              'image_alt'   => $request->image_alt,
+             'material'    => $request->material,
              'meta_title'       => $request->meta_title,
              'meta_description' => $request->meta_description,
              'meta_robots'      => $request->meta_robots,
@@ -177,6 +178,7 @@ class WorksController extends Controller
         $work->permalink    = self::urlFriendly($request->permalink,false);
         $work->description  = $request->description;
         $work->image_alt    = $request->image_alt;
+        $work->material    = $request->material;
 
         $work->meta_title       = $request->meta_title;
         $work->meta_description = $request->meta_description;

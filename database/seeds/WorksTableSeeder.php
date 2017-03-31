@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Stoneworking\Models\Work;
 
 class WorksTableSeeder extends Seeder
 {
@@ -12,9 +13,10 @@ class WorksTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('works')->delete();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Work::truncate();
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
         
         \DB::table('works')->insert(array (
             0 => 
@@ -25,6 +27,7 @@ class WorksTableSeeder extends Seeder
                 'permalink' => 'cocina-con-granito-negro-absoluto',
                 'image' => 'cocina-granito-negro-absoluto',
                 'image_alt' => 'Cocina con Granito Negro Absoluto',
+                'material' => 'Granito',
                 'description' => NULL,
                 'active' => 1,
                 'meta_title' => 'Cocina con Granito Negro Absoluto',
@@ -41,6 +44,7 @@ class WorksTableSeeder extends Seeder
                 'permalink' => 'cubierta-de-granito-negro-exótico-para-quemadores',
                 'image' => 'cocina-granito-negro-exotico',
                 'image_alt' => 'Cubierta de Granito Negro Exótico para Quemadores',
+                'material' => 'Granito',
                 'description' => NULL,
                 'active' => 1,
                 'meta_title' => 'Cubierta de Granito Negro Exótico para Quemadores',
@@ -58,6 +62,7 @@ class WorksTableSeeder extends Seeder
                 'image' => 'cocina-granito-negro-san-gabriel',
                 'image_alt' => 'Cocina con cubierta de Granito Negro San Gabriel',
                 'description' => NULL,
+                'material' => 'Granito',
                 'active' => 1,
                 'meta_title' => 'Cocina con cubierta de Granito Negro San Gabriel',
                 'meta_description' => 'Hermosa cocina con cubierta de Granito Negro San Gabriel',
@@ -73,6 +78,7 @@ class WorksTableSeeder extends Seeder
                 'permalink' => 'cocina-tiop-l-con-barra-de-granito-negro',
                 'image' => 'cocina-de-granito-negro',
                 'image_alt' => 'Cocina con barra de Granito Negro',
+                'material' => 'Granito',
                 'description' => NULL,
                 'active' => 1,
                 'meta_title' => 'Cocina tiop L con Barra de Granito Negro',
@@ -89,6 +95,7 @@ class WorksTableSeeder extends Seeder
                 'permalink' => 'cocina-con-cubierta-de-granito-blanco-cristal',
                 'image' => 'cocina-con-cubierta-de-granito-blanco-cristal',
                 'image_alt' => 'Cocina con cubierta de Granito Blanco Cristal',
+                'material' => 'Granito',
                 'description' => NULL,
                 'active' => 1,
                 'meta_title' => 'Cocina con cubierta de Granito Blanco Cristal',
@@ -105,6 +112,7 @@ class WorksTableSeeder extends Seeder
                 'permalink' => 'cocina-con-cubierta-de-granito-alaska',
                 'image' => 'cocina-con-cubierta-de-granito-alaska',
                 'image_alt' => 'Cocina con Cubierta de Granito Alaska',
+                'material' => 'Granito',
                 'description' => NULL,
                 'active' => 1,
                 'meta_title' => 'Cocina con Cubierta de Granito Alaska',
@@ -122,6 +130,7 @@ class WorksTableSeeder extends Seeder
                 'image' => 'cocina-granito-amarillo-siamen',
                 'image_alt' => 'Cocina con cubierta de Granito Amarillo Siamen',
                 'description' => 'Hermosa cubierta de Granito tipo Alaska en cocina integral',
+                'material' => 'Granito',
                 'active' => 1,
                 'meta_title' => 'Cocina con Cubierta de Granito Amarillo Siamen',
                 'meta_description' => 'Cocina Integral con hermosa cubierta de Granito Amarillo Siamen',
@@ -135,18 +144,20 @@ class WorksTableSeeder extends Seeder
                 'category_id' => 2,
                 'name' => 'Cocina con Granito Negro San Gabriel Cepillado',
                 'permalink' => 'cocina-granito-negro-san-gabriel-cepillado-1',
-                'image' => 'granito-blanco-cristal',
+                'image' => 'cocina-granito-negro-san-gabriel-cepillado-1',
                 'image_alt' => 'Cocina con Granito Negro San Gabriel Cepillado',
+                'material' => 'Granito',
                 'description' => 'Cocina con Granito Negro San Gabriel Cepillado, popularmente conocido como molcajete ya que cuenta con una textura rugosa expectacular',
-                'active' => 0,
+                'active' => 1,
                 'meta_title' => 'Cocina con Granito Negro San Gabriel Cepillado',
                 'meta_description' => 'Cocina con Granito Negro San Gabriel Cepillado, popularmente conocido como molcajete ya que cuenta con una textura rugosa expectacular',
                 'meta_robots' => 'index, follow',
                 'created_at' => '2017-03-30 20:12:57',
-                'updated_at' => '2017-03-30 20:17:16',
+                'updated_at' => '2017-03-31 00:36:06',
             ),
         ));
-        
+
+        $this->command->info('Works Seeded Successfully');
         
     }
 }
