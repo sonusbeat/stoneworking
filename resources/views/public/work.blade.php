@@ -15,7 +15,15 @@
 			</div><!-- /.col -->
 			<div class="work__information">
 				<h2>{{ $work->name }}</h2>
-				<p><small>Material:</small>&nbsp;----</p>
+
+				@if($work->tags()->count())
+					<p><small>Etiquetas:</small>&nbsp;
+					@foreach($work->tags as $tag)
+						{{ $tag->name }}&nbsp;
+					@endforeach
+					</p>
+				@endif
+
 				<div class="description">
 					{{ $work->description }}
 				</div>

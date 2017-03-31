@@ -29,6 +29,18 @@
                         </td>
                     </tr>
                     <tr>
+                        <th>Etiquetas</th>
+                        <td>
+                        @foreach($work->tags as $index => $tag)
+                            @if($work->tags()->count() -1 == $index)
+                                {{ $tag->name }}
+                            @else
+                                {{ $tag->name }},
+                            @endif
+                        @endforeach
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Activo</th>
                         <td>{{ $work->active ? 'Si' : 'No' }}</td>
                     </tr>

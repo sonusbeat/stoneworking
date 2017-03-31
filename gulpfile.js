@@ -5,7 +5,7 @@ elixir(function(mix) {
 	/* ################## Public ################## */
     // mix.sass('main.scss', 'public/css/main.min.css');
 
-    mix.sass('secondary.scss', 'public/css/secondary.min.css');
+    // mix.sass('secondary.scss', 'public/css/secondary.min.css');
 
     // mix.styles([
     //   'bootstrap.min.css',
@@ -61,6 +61,7 @@ elixir(function(mix) {
     //     'jquery.fancybox-thumbs.css',
     // 	'fontastic.css',
     // 	'jquery.fancybox.css',
+    // 	'select2.min.css',
     // 	'sweetalert.css',
     // ], 'public/css/admin-libraries.min.css');
 
@@ -70,6 +71,7 @@ elixir(function(mix) {
     //     'jquery.goup.js',
     //     'jquery.fancybox.js',
     //     'sweetalert.min.js',
+    //     'select2.min.js',
     // ], 'public/js/admin-libraries.min.js');
 
     mix.browserSync({

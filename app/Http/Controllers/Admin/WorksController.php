@@ -9,6 +9,7 @@ use Stoneworking\Http\Controllers\Controller;
 use Stoneworking\Http\Requests\WorksRequest;
 use Stoneworking\Models\Category;
 use Stoneworking\Models\Section;
+use Stoneworking\Models\Tag;
 use Stoneworking\Models\Work;
 use Stoneworking\Traits\ImageTrait;
 use Stoneworking\Traits\ModelUtilityTrait;
@@ -68,7 +69,9 @@ class WorksController extends Controller
         $category = Category::where('permalink', $categoryPermalink)
             ->select('id','permalink')->first();
 
-        return view('admin/works/create', compact('category'));
+        $tags = Tag::lists('name','id');
+
+        return view('admin/works/create', compact('category','tags'));
     }
 
     /**
@@ -94,6 +97,11 @@ class WorksController extends Controller
          ]);
 
         $work->save();
+
+        // Adds tags to post
+        if(is_array($request->tag_list) AND $request->tag_list != []):
+            $work->tags()->attach($request->tag_list);
+        endif;
 
         if($request->hasFile('image')):
             $file = $request->file('image');
@@ -143,6 +151,7 @@ class WorksController extends Controller
             'category'   => Category::where('permalink', $categoryPermalink)->select('id','permalink')->first(),
             'work'       => Work::where('permalink', $workPermalink)->first(),
             'categories' => Category::lists('id', 'name'),
+            'tags'       => Tag::lists('name','id'),
             'changeCategory' => true
         ];
 
@@ -174,7 +183,12 @@ class WorksController extends Controller
         $work->meta_robots      = $request->meta_robots;
 
         // Save to database
-         $work->save();
+        $work->save();
+
+        // Adds tags to post
+        if(is_array($request->tag_list) AND $request->tag_list != []):
+             $work->tags()->sync($request->tag_list);
+        endif;
 
         if($request->hasFile('image')):
             $file = $request->file('image');

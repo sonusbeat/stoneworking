@@ -27,3 +27,11 @@
         </a>
     </div><!-- /.container -->
 @endsection
+
+@section('custom-scripts')
+    <script>
+        $("#tag_list").select2({
+            placeholder: 'Selecciona una etiqueta'
+        });
+    </script>
+@endsection

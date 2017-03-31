@@ -12,6 +12,8 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        
+
         \DB::table('categories')->delete();
         
         \DB::table('categories')->insert(array (
@@ -20,12 +22,12 @@ class CategoriesTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'Baños',
                 'permalink' => 'banos',
-                'active' => 1,
-                'meta_title' => '',
-                'meta_description' => '',
+                'active' => 0,
+                'meta_title' => NULL,
+                'meta_description' => NULL,
                 'meta_robots' => 'index, follow',
-                'created_at' => '2017-01-21 18:48:31',
-                'updated_at' => '2017-01-31 17:49:39',
+                'created_at' => '2017-02-01 19:03:07',
+                'updated_at' => '2017-02-01 19:05:51',
             ),
             1 => 
             array (
@@ -36,23 +38,23 @@ class CategoriesTableSeeder extends Seeder
                 'meta_title' => NULL,
                 'meta_description' => NULL,
                 'meta_robots' => 'index, follow',
-                'created_at' => '2017-01-21 18:48:31',
-                'updated_at' => '2017-01-21 19:04:07',
+                'created_at' => '2017-02-01 19:05:24',
+                'updated_at' => '2017-02-01 19:05:29',
             ),
             2 => 
             array (
                 'id' => 3,
                 'name' => 'Negocios',
                 'permalink' => 'negocios',
-                'active' => 1,
+                'active' => 0,
                 'meta_title' => NULL,
                 'meta_description' => NULL,
                 'meta_robots' => 'index, follow',
-                'created_at' => '2017-01-21 18:48:31',
-                'updated_at' => '2017-01-31 17:58:59',
+                'created_at' => '2017-02-01 19:05:44',
+                'updated_at' => '2017-02-01 19:05:44',
             ),
         ));
         
-        $this->command->info('Categories table seeded :)');
+        
     }
 }

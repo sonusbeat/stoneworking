@@ -172,12 +172,34 @@
                     <input class="form-control" id="image_alt" type="text" name="image_alt"
                            value="{{ $work->image_alt or old('image_alt') }}">
                     @if ($errors->has('image_alt'))
-                        <span class="help-block">
-                <b>{{ $errors->first('image_alt') }}</b>
-            </span>
+                    <span class="help-block">
+                        <b>{{ $errors->first('image_alt') }}</b>
+                    </span>
                     @endif
                 </div>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div>
 </div><!-- /.row -->
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+        <!-- ETIQUETAS -->
+        <label for="tag_list">Etiquetas</label>
+            <select name="tag_list[]" id="tag_list" class="form-control" multiple>
+                @foreach($tags as $key => $value)
+                    <option value="{{ $key }}"
+                        @if(isset($work))
+                            @foreach($work->tags as $tag)
+                                {{ ($tag->id == $key) ? 'selected' : null }}
+                            @endforeach
+                        @endif
+                    >
+                        {{ $value }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+</div>
