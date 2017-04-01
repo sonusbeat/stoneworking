@@ -1,3 +1,6 @@
+// Colors
+$green: hsl(74,100,40);
+
 .work {
   display: flex;
   &__image {
@@ -10,8 +13,48 @@
     width: 40%;
   }
   &__information {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     align-self: center;
     width: 55%;
+
+    h2 {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: solid 1px #ddd;
+    }
+    .data {
+      display: flex;
+      p {
+        font-size: 14px;
+        margin: 30px 15px 20px 0;
+        padding-bottom: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        spam {
+          font-size: 16px;
+          color: $green;
+        }
+      }
+    }
+    .tags {
+      margin-top: 20px;
+      &__subtitle {
+        font-weight: bold;
+      }
+      a {
+        background-color: $green;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-right: 15px;
+        &:hover {
+          background-color: $navy;
+        }
+      }
+    }
   }
 }
 

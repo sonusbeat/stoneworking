@@ -77,6 +77,7 @@ class Work extends Model
             'works.meta_title',
             'works.meta_description',
             'works.meta_robots',
+            \DB::raw('categories.name as category_name'),
             \DB::raw('categories.permalink as category_permalink')
         ])
             ->leftJoin('categories','categories.id','=','works.category_id')

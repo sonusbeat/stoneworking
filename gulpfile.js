@@ -5,7 +5,7 @@ elixir(function(mix) {
 	/* ################## Public ################## */
     // mix.sass('main.scss', 'public/css/main.min.css');
 
-    // mix.sass('secondary.scss', 'public/css/secondary.min.css');
+     mix.sass('secondary.scss', 'public/css/secondary.min.css');
 
     // mix.styles([
     //   'bootstrap.min.css',

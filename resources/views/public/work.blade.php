@@ -9,6 +9,7 @@
 			<div class="work__image">
 				<a href="/img/portfolio/{{ $work->image }}-large.jpg"
 				   id="image"
+				   class="magnify-search"
 				   title="{{ $work->name }}">
 					<img src="/img/portfolio/{{ $work->image }}-medium.jpg" alt="{{ $work->image_alt }}">
 				</a>
@@ -16,18 +17,23 @@
 			<div class="work__information">
 				<h2>{{ $work->name }}</h2>
 
-				<p><small>Material:</small> <i>{{ $work->material }}</i></p>
+				<div class="data">
+					<p><b>Material:</b>&nbsp;<spam>{{ $work->material }}</spam></p>
+
+					<p><b>Categoría:</b>&nbsp;<spam>{{ $work->category_name }}</spam></p>
+				</div><!-- /.data -->
 
 				<div class="description">
 					{{ $work->description }}
 				</div><br>
 
 				@if($work->tags()->count())
-					<p><small>Etiquetas:</small>&nbsp;
+					<div class="tags">
+						<p class="tags__subtitle">Etiquetas</p>
 						@foreach($work->tags as $tag)
 							<a href="#">{{ $tag->name }}</a>
 						@endforeach
-					</p>
+					</div><!-- /.tags -->
 				@endif
 			</div><!-- /.col -->
 		</div><!-- /.row -->
