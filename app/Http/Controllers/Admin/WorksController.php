@@ -319,6 +319,7 @@ class WorksController extends Controller
         endif;
 
         $work->delete();
+        $work->tags()->detach();
 
         flash()->success('¡ Bien Hecho !', 'Se eliminó el trabajo ('.$work->name.') correctamente');
 
