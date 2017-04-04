@@ -55,33 +55,33 @@
 
         @if($work->images()->count())
             @foreach(array_chunk($work->images->all(), 4) as $row)
-            <div class="row">
-                @foreach($row as $work_image)
-                <div class="col-md-3 text-center">
-                    <div style="margin-bottom:20px;">
-                        <a href="/img/portfolio/work-images/{{ $work_image->name }}-medium.jpg"
-                           id="image"
-                           class="magnify-search"
-                        >
-                            <img src="/img/portfolio/work-images/{{ $work_image->name }}-thumbnail.jpg"
-                                 class="img-thumbnail img-responsive"
-                                 alt="{{ $work_image->name }}"
-                            >
-                        </a>
-                    </div>
-                    <div class="text-center">
-                        <a href="{{ route('admin.works.images.edit', [$work->id, $work_image->id]) }}"
-                           class="btn btn-warning"
-                           title="Editar Imagen"
-                           data-toggle="tooltip"
-                        >
-                            <spam class="glyphicon glyphicon-pencil"></spam>
-                        </a>
-                        {!! delete_resource('works.images', [$work->id, $work_image->id], 'Imágen') !!}
-                    </div>
-                </div><!-- /.col -->
-                @endforeach
-            </div><br><!-- /.row -->
+                <div class="row">
+                    @foreach($row as $work_image)
+                        <div class="col-md-3 text-center">
+                            <div style="margin-bottom:20px;">
+                                <a href="/img/portfolio/work-images/{{ $work_image->name }}-medium.jpg"
+                                   id="image"
+                                   class="magnify-search"
+                                >
+                                    <img src="/img/portfolio/work-images/{{ $work_image->name }}-thumbnail.jpg"
+                                         class="img-thumbnail img-responsive"
+                                         alt="{{ $work_image->name }}"
+                                    >
+                                </a>
+                            </div>
+                            <div class="text-center">
+                                <a href="{{ route('admin.works.images.edit', [$work->id, $work_image->id]) }}"
+                                   class="btn btn-warning"
+                                   title="Editar Imagen"
+                                   data-toggle="tooltip"
+                                >
+                                    <spam class="glyphicon glyphicon-pencil"></spam>
+                                </a>
+                                {!! delete_resource('works.images', [$work->id, $work_image->id], 'Imágen') !!}
+                            </div>
+                        </div><!-- /.col -->
+                    @endforeach
+                </div><br><!-- /.row -->
             @endforeach
         @else
             <div style="margin-bottom:30px;">
@@ -105,48 +105,48 @@
 @endsection
 
 @section('custom-scripts')
-<script>
-    $(function() {
-        // Delete Image
-        $(document).on("submit", "#delete", function($event) {
-            event.preventDefault();
-            var self = $(this);
-            swal({
-                title: "¡ Advertencia !",
-                text: "No se podrá recuperar el trabajo",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Eliminar",
-                cancelButtonText: "Cancelar",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-            function(isConfirm){
-                if (isConfirm) {
-                    self.submit();
-                } else {
-                    swal("Cancelado", "El trabajo no se eliminó", "error");
+    <script>
+        $(function() {
+            // Delete Image
+            $(document).on("submit", "#delete", function($event) {
+                event.preventDefault();
+                var self = $(this);
+                swal({
+                        title: "¡ Advertencia !",
+                        text: "No se podrá recuperar el trabajo",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Eliminar",
+                        cancelButtonText: "Cancelar",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function(isConfirm){
+                        if (isConfirm) {
+                            self.submit();
+                        } else {
+                            swal("Cancelado", "El trabajo no se eliminó", "error");
+                        }
+                    });
+            });
+            // Tooltip
+            $('[data-toggle="tooltip"]').tooltip({
+                placement: 'top',
+                delay: {
+                    show: 100,
+                    hide: 200
+                }
+            });
+            // Fancybox
+            $("#image").fancybox({
+                openEffect	: 'elastic',
+                closeEffect	: 'elastic',
+                fitToView: true,
+                helpers		: {
+                    title   : { type : 'over' }
                 }
             });
         });
-        // Tooltip
-        $('[data-toggle="tooltip"]').tooltip({
-            placement: 'top',
-            delay: {
-                show: 100,
-                hide: 200
-            }
-        });
-        // Fancybox
-        $("#image").fancybox({
-            openEffect	: 'elastic',
-            closeEffect	: 'elastic',
-            fitToView: true,
-            helpers		: {
-                title   : { type : 'over' }
-            }
-        });
-    });
-</script>
+    </script>
 @endsection

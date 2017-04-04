@@ -8,8 +8,8 @@
 		<div class="work">
 			<div class="work__image">
 				<a href="/img/portfolio/{{ $work->image }}-large.jpg"
-				   id="image"
-				   class="magnify-search"
+				   class="fancybox-button magnify-search"
+				   rel="fancybox-button"
 				   title="{{ $work->name }}">
 					<img src="/img/portfolio/{{ $work->image }}-medium.jpg" alt="{{ $work->image_alt }}">
 				</a>
@@ -36,7 +36,31 @@
 					</div><!-- /.tags -->
 				@endif
 			</div><!-- /.col -->
-		</div><!-- /.row -->
+		</div><br><!-- /.row -->
+
+		@if($work->images()->count())
+			<h3 class="text-center">Galería de Imágenes</h3><hr>
+			@foreach(array_chunk($work->images->all(), 4) as $row)
+				<div class="row">
+					@foreach($row as $work_image)
+						<div class="col-md-3 text-center">
+							<div style="margin-bottom:20px;">
+								<a href="/img/portfolio/work-images/{{ $work_image->name }}-medium.jpg"
+								   class="fancybox-button magnify-search"
+								   rel="fancybox-button"
+								   title="{{ $work->image_alt }}"
+								>
+									<img src="/img/portfolio/work-images/{{ $work_image->name }}-thumbnail.jpg"
+										 class="img-thumbnail img-responsive"
+										 alt="{{ $work_image->name }}"
+									>
+								</a>
+							</div>
+						</div><!-- /.col -->
+					@endforeach
+				</div><br><!-- /.row -->
+			@endforeach
+		@endif
 
 		{{--
 		<h3>Comentarios</h3>
@@ -56,13 +80,21 @@
 @section('custom-scripts')
 	<script>
         $(function() {
-            // Fancybox
-            $("#image").fancybox({
+            $(".fancybox-button").fancybox({
+                prevEffect  : 'elastic',
+                nextEffect  : 'elastic',
                 openEffect	: 'elastic',
                 closeEffect	: 'elastic',
-                fitToView: false,
+                closeBtn	: true,
                 helpers		: {
-                     title   : { type : 'over' }
+                    title	: { type : 'inside' },
+                    buttons	: { position: 'bottom' },
+                    overlay : {},
+                    title   : {
+                        // 'float', 'inside', 'outside' or 'over'
+                        type : 'over'
+                    },
+                    thumbs: false
                 }
             });
         });
