@@ -38,7 +38,7 @@ class Work extends Model
             ->get();
     }
 
-    // ADMIN
+    ######################### ADMIN #########################
 
     /**
      * Get all jobs with category
@@ -55,6 +55,18 @@ class Work extends Model
                 $query->select('id','name','permalink');
             }])
             ->get();
+    }
+
+    /**
+     * Get admin work
+     *
+     * @param Query $query
+     * @param string $permalink
+     * @return Query
+     */
+    public static function details($permalink)
+    {
+        return self::where('permalink',$permalink)->with('images')->first();
     }
 
     /**
@@ -103,5 +115,15 @@ class Work extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
+    }
+
+    /**
+     * Has Many Work Images Relationship
+     *
+     * @return HasMany
+     */
+    public function images()
+    {
+        return $this->hasMany(WorkImage::class);
     }
 }

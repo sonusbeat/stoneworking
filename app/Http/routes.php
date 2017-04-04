@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         'uses' => 'WorksController@latest'
     ]);
     Route::resource('categories.works', 'WorksController');
+    /* --------------------------- Works Images --------------------------- */
+    Route::resource('works.images', 'WorkImagesController', ['except' => 'show']);
 });
 
 // Authentication routes...

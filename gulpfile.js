@@ -5,7 +5,7 @@ elixir(function(mix) {
 	/* ################## Public ################## */
     // mix.sass('main.scss', 'public/css/main.min.css');
 
-     mix.sass('secondary.scss', 'public/css/secondary.min.css');
+     // mix.sass('secondary.scss', 'public/css/secondary.min.css');
 
     // mix.styles([
     //   'bootstrap.min.css',
@@ -74,8 +74,8 @@ elixir(function(mix) {
     //     'select2.min.js',
     // ], 'public/js/admin-libraries.min.js');
 
-    mix.browserSync({
-      proxy: 'stoneworking.dev',
-      open: true
-    });
+    // mix.browserSync({
+    //   proxy: 'stoneworking.dev',
+    //   open: true
+    // });
 });

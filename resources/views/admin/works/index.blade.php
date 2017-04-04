@@ -95,7 +95,7 @@
             var self = $(this);
             swal({
                 title: "¡ Advertencia !",
-                text: "No se podrá recuperar el trabajo",
+                text: "Se va a eliminar el trabajo junto con sus imagenes",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",

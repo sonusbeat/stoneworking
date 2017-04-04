@@ -11,6 +11,7 @@ use Stoneworking\Models\Category;
 use Stoneworking\Models\Section;
 use Stoneworking\Models\Tag;
 use Stoneworking\Models\Work;
+use Stoneworking\Models\WorkImage;
 use Stoneworking\Traits\ImageTrait;
 use Stoneworking\Traits\ModelUtilityTrait;
 
@@ -71,7 +72,7 @@ class WorksController extends Controller
     public function show($categoryPermalink, $workPermalink)
     {
         $category = Category::where('permalink', $categoryPermalink)->select('name','permalink')->first();
-        $work = Work::where('permalink',$workPermalink)->first();
+        $work = Work::details($workPermalink);
 
         return view('admin/works/show', compact('category','work'));
     }
@@ -301,7 +302,10 @@ class WorksController extends Controller
     public function destroy($categoryId, $workId)
     {
         $categoryPermalink = Category::where('id',$categoryId)->pluck('permalink');
-        $work              = Work::where('id',$workId)->select('id','name','image')->first();
+        $work = Work::where('id',$workId)
+                    ->with('images')
+                    ->select('id','name','image')
+                    ->first();
 
         // Remove Large Image
         if(\File::exists('img/portfolio/'.$work->image.'-large.jpg')):
@@ -316,6 +320,27 @@ class WorksController extends Controller
         // Remove Thumbnail Image
         if(\File::exists('img/portfolio/'.$work->image.'-thumbnail.jpg')):
             \File::delete('img/portfolio/'.$work->image.'-thumbnail.jpg');
+        endif;
+
+        ######################### Remove Images #########################
+
+        if($work->images()->count()) :
+            foreach($work->images as $image):
+                // Remove Images Large Size
+                if(\File::exists('img/portfolio/work-images/'.$image->name.'-large.jpg')):
+                    \File::delete('img/portfolio/work-images/'.$image->name.'-large.jpg');
+                endif;
+
+                // Remove Images Medium Size
+                if(\File::exists('img/portfolio/work-images/'.$image->name.'-medium.jpg')):
+                    \File::delete('img/portfolio/work-images/'.$image->name.'-medium.jpg');
+                endif;
+
+                // Remove Images Thumbnail Size
+                if(\File::exists('img/portfolio/work-images/'.$image->name.'-thumbnail.jpg')):
+                    \File::delete('img/portfolio/work-images/'.$image->name.'-thumbnail.jpg');
+                endif;
+            endforeach;
         endif;
 
         $work->delete();
