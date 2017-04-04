@@ -24,6 +24,8 @@
                     <tr>
                         <th>Nombre</th>
                         <th class="text-center">Categoría</th>
+                        <th class="text-center">Material</th>
+                        <th class="text-center">Imágenes</th>
                         <th class="text-center">Activo</th>
                         <th class="text-center">Acciones</th>
                     </tr>
@@ -33,7 +35,13 @@
                     <tr>
                         <td>{{ $work->name }}</td>
                         <td class="text-center">
-                            {{ $work->category->name }}
+                            {{ $work->category_name }}
+                        </td>
+                        <td class="text-center">
+                            {{ $work->material }}
+                        </td>
+                        <td class="text-center">
+                            <span class="badge">{{ $work->images_count }}</span>
                         </td>
                         <td class="text-center">
                             @if($work->active)

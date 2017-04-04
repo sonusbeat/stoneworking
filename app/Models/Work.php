@@ -50,10 +50,21 @@ class Work extends Model
     public static function OrderedWithCategory($categoryId, $order='asc')
     {
         return self::where('category_id', $categoryId)
-            ->orderBy('created_at',$order)
-            ->with(['category' => function($query) {
-                $query->select('id','name','permalink');
-            }])
+            ->orderBy('works.created_at',$order)
+            ->select([
+                'works.id',
+                'works.category_id',
+                'works.name',
+                'works.permalink',
+                'works.material',
+                'works.active',
+                \DB::raw('categories.name as category_name'),
+                \DB::raw('categories.permalink as category_permalink'),
+                \DB::raw('COUNT(DISTINCT work_images.id) as images_count')
+            ])
+            ->leftJoin('categories','categories.id','=','works.category_id')
+            ->leftJoin('work_images','work_images.work_id','=','works.id')
+            ->groupBy('works.name')
             ->get();
     }
 
