@@ -48,11 +48,11 @@
 								<a href="/img/portfolio/work-images/{{ $work_image->name }}-medium.jpg"
 								   class="fancybox-button magnify-search"
 								   rel="fancybox-button"
-								   title="{{ $work->image_alt }}"
+								   title="{{ $work_image->alt }}"
 								>
 									<img src="/img/portfolio/work-images/{{ $work_image->name }}-thumbnail.jpg"
 										 class="img-thumbnail img-responsive"
-										 alt="{{ $work_image->name }}"
+										 alt="{{ $work_image->alt }}"
 									>
 								</a>
 							</div>
